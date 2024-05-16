@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import App from './App.tsx';
+import Home from './Home.tsx';
 import AboutMe from './routes/aboutMe/AboutMe.tsx';
 import Models from './routes/models/Models.tsx';
 import Keebs from './routes/keebs/Keebs.tsx';
@@ -13,7 +13,7 @@ import './index.css'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <Home />
     // loader: rootLoader,
     // children: [
     //   {
