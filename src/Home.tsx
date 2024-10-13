@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { PrimeReactProvider } from 'primereact/api'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './Home.css'
 import '/node_modules/primeflex/primeflex.css'
 
-function App() {
+function Home() {
   const [count, setCount] = useState(0)
 
   return (
@@ -34,4 +34,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
