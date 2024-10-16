@@ -10,8 +10,9 @@ import AboutMe from './routes/aboutMe/AboutMe.tsx';
 import Models from './routes/models/Models.tsx';
 import Keebs from './routes/keebs/Keebs.tsx';
 import Article from './routes/article/Article.tsx';
-import './index.css'
-import MarkdownCreate from './routes/markdownCreate/markdownCreate.tsx';
+import MarkdownCreate from './routes/markdownCreate/MarkdownCreate.tsx';
+import './index.css';
+
 
 const router = createBrowserRouter([
   {
