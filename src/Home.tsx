@@ -1,5 +1,6 @@
 import TopMenu from "./components/TopMenu/TopMenu"
 import { Card } from 'primereact/card';
+import { Helmet } from "react-helmet";
 import './Home.css'
 import 'primeflex/primeflex.css'
 import 'primereact/resources/themes/mira/theme.css'
@@ -8,6 +9,9 @@ function Home() {
 
   return (
     <div id="Home" className="flex flex-column max-h-screen overflow-hidden">
+      <Helmet>
+        <title>Home - wilsonfung.com</title>
+      </Helmet>
       <div className="min-w-min flex-none top-0 border-none" >
         <TopMenu current="Home" />
       </div>
