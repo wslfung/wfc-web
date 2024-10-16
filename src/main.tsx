@@ -9,19 +9,14 @@ import Home from './Home.tsx';
 import AboutMe from './routes/aboutMe/AboutMe.tsx';
 import Models from './routes/models/Models.tsx';
 import Keebs from './routes/keebs/Keebs.tsx';
+import Article from './routes/article/Article.tsx';
 import './index.css'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
-    // loader: rootLoader,
+    element: <Home />,
     // children: [
-    //   {
-    //     path: "team",
-    //     element: <Team />,
-    //     loader: teamLoader,
-    //   },
     // ],
   },
   {
@@ -30,11 +25,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/models",
-    element: <Models />
+    element: <Models />,
   },
   {
     path: "/keebs",
-    element: <Keebs />
+    element: <Keebs />,
+  },
+  {
+    path: "/keebs/:articleId",
+    element: <Article />
+  },
+  {
+    path: "/models/:articleId",
+    element: <Article />
   }
 ]);
 
