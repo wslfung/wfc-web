@@ -1,0 +1,13 @@
+#TopMenu .MuiSvgIcon-root {
+  margin-right:7px;
+  color: var(--text-color-secondary);
+}
+
+#TopMenu span.pi {
+  font-size: 1.3em !important;
+  /* color: var(--primary-color); */
+}
+
+#TopMenu #Logo {
+  margin-right: 15px;
+}

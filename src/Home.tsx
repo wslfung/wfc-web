@@ -1,36 +1,16 @@
-import { useState } from 'react'
-import { PrimeReactProvider } from 'primereact/api'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import TopMenu from "./components/TopMenu/TopMenu"
 import './Home.css'
-import '/node_modules/primeflex/primeflex.css'
+import 'primeflex/primeflex.css'
+import 'primereact/resources/themes/mira/theme.css'
 
 function Home() {
-  const [count, setCount] = useState(0)
 
   return (
-    <PrimeReactProvider>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="grid">
+      <div className="col-12 min-w-min" >
+        <TopMenu current="Home" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </PrimeReactProvider>
+    </div>
   )
 }
 
