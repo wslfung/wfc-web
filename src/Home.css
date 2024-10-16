@@ -2,9 +2,5 @@ body {
   margin: 0 auto;
   padding: 0;
   text-align: left;
-  background-color: var(--surface-ground);
-}
-
-#root {
-  /* max-width: 1280px; */
+  height: 100%;
 }

@@ -2,17 +2,17 @@ import "./Logo.css"
 
 interface LogoProps {
   id?: string
-  size?: string
+  className?: string
 }
 
 const defaultProps: LogoProps = {
   id: "Logo",
-  size: "text-xl"
+  className: "text-xl pr-2 lg:pr-4"
 }
 
 function Logo(props = defaultProps) {
   return (
-    <span id={props.id} className={"wf-logo " + props.size} aria-label="wilsonfung.com">w.f.</span>
+    <span id={props.id} className={"wf-logo " + props.className} aria-label="wilsonfung.com">w.f.</span>
   )
 
 }

@@ -1,6 +1,8 @@
 import Logo from '../Logo/Logo'
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
+import { IconField } from 'primereact/iconfield';
+import { InputIcon } from 'primereact/inputicon';
 import 'primeicons/primeicons.css';
 import KeyboardAltOutlinedIcon from '@mui/icons-material/KeyboardAltOutlined';
 import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
@@ -11,14 +13,15 @@ interface TopMenuProps {
   current?: string
 }
 
-export default function TopMenu({current}:TopMenuProps) {
+export default function TopMenu({ current }: TopMenuProps) {
 
   let navigate = useNavigate();
-  const logo = <Logo id="Logo" size="text-4xl lg:text-6xl" />
+  const logo = <Logo id="Logo" className="text-4xl lg:text-6xl pr-2 lg:pr-4" />
   const searchbox = (
-    <div id="topMenu" className="flex align-items-center gap-2">
-        <InputText placeholder="Search" type="text" className="w-8rem sm:w-auto" />
-    </div>
+    <IconField iconPosition="left">
+      <InputIcon className="pi pi-search" />
+      <InputText placeholder="Search" className="w-8rem sm:w-auto" />
+    </IconField>
   );
   let menuItems = [
     {
@@ -30,14 +33,14 @@ export default function TopMenu({current}:TopMenuProps) {
     },
     {
       label: "Models",
-      icon: <SmartToyOutlinedIcon />,
+      icon: <SmartToyOutlinedIcon className='pr-2 text-3xl text-color-secondary' />,
       command: () => {
         navigate("/models")
       }
     },
     {
       label: "Keyboards",
-      icon: <KeyboardAltOutlinedIcon />,
+      icon: <KeyboardAltOutlinedIcon className="pr-2 text-3xl text-color-secondary" />,
       command: () => {
         navigate("/keebs")
       }
@@ -58,7 +61,7 @@ export default function TopMenu({current}:TopMenuProps) {
   }
 
   return (
-    <Menubar id="TopMenu" model={menuItems} start={logo} end={searchbox}/>
+    <Menubar model={menuItems} start={logo} end={searchbox} className='wf-header pr-3 pl-3'/>
   )
 
 }
