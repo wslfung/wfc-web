@@ -6,11 +6,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './Home.tsx';
-import AboutMe from './routes/aboutMe/AboutMe.tsx';
-import Models from './routes/models/Models.tsx';
-import Keebs from './routes/keebs/Keebs.tsx';
-import Article from './routes/article/Article.tsx';
-import MarkdownCreate from './routes/markdownCreate/MarkdownCreate.tsx';
+import AboutMe from './routes/AboutMe/AboutMe.tsx';
+import Models from './routes/Models/Models.tsx';
+import Keebs from './routes/Keebs/Keebs.tsx';
+import Article from './routes/Article/Article.tsx';
+import MarkdownCreate from './routes/MarkdownCreate/MarkdownCreate.tsx';
 import './index.css';
 
 
