@@ -1,0 +1,8 @@
+.wf-markdown ul.contains-task-list {
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+.wf-markdown li.task-list-item {
+  line-height: 1.5em;
+}
