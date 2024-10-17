@@ -4,6 +4,7 @@ import { Button } from 'primereact/button';
 import { useRef, useState } from 'react'
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 export default function MarkdownCreate() {
 
@@ -45,7 +46,7 @@ export default function MarkdownCreate() {
           console.log("mdxeditorref is null")
         }
       }} />
-      <Markdown className="p-component" remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
+      <Markdown className="p-component" remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{markdown}</Markdown>
     </div>
   )
 }
