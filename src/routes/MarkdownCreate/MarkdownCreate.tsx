@@ -2,6 +2,7 @@ import { BlockTypeSelect, BoldItalicUnderlineToggles, CodeToggle, CreateLink, di
 import '@mdxeditor/editor/style.css'
 import { Button as PRButton } from 'primereact/button';
 import { Checkbox } from 'primereact/checkbox';
+import { Splitter, SplitterPanel } from 'primereact/splitter';
 import React, { useRef, useState } from 'react'
 import Markdown, { ExtraProps } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -12,7 +13,7 @@ export default function MarkdownCreate() {
 
   const mdxEditorRef = useRef<MDXEditorMethods>(null)
 
-  const [ markdown, setMarkdown ] = useState<string>(`# Hello World
+  const [markdown, setMarkdown] = useState<string>(`# Hello World
 
 [google](https://www.google.com "google")
 
@@ -24,7 +25,8 @@ export default function MarkdownCreate() {
 * [ ] dfsdf`)
 
   return (
-    <div className='flex flex-column min-h-screen'>
+    <Splitter className='min-h-screen'>
+      <SplitterPanel className='flex flex-column min-h-screen'>
       <MDXEditor ref={mdxEditorRef} className="flex-grow-1" markdown={markdown} plugins={[headingsPlugin(), listsPlugin(), quotePlugin(), thematicBreakPlugin(), imagePlugin(), tablePlugin(), linkDialogPlugin(), linkPlugin(), markdownShortcutPlugin(), 
       diffSourcePlugin({
         viewMode: 'rich-text'
@@ -48,7 +50,7 @@ export default function MarkdownCreate() {
           </>
         )
       })]} contentEditableClassName='p-component wf-markdown' />
-      <PRButton link className='flex-grow-0' label='Convert' onClick={()=>{
+      <PRButton className='flex-grow-0' label='Preview' onClick={()=>{
         if (mdxEditorRef.current) {
           setMarkdown(mdxEditorRef.current.getMarkdown())
           console.log("state is set")
@@ -56,6 +58,8 @@ export default function MarkdownCreate() {
           console.log("mdxeditorref is null")
         }
       }} />
+      </SplitterPanel>
+      <SplitterPanel className='flex flex-column min-h-screen'>
       <Markdown className='p-component wf-markdown' remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{
         a: (props: JSX.IntrinsicElements["a"] & ExtraProps) => {
           const {children, node, ...rest} = props
@@ -76,6 +80,8 @@ export default function MarkdownCreate() {
           )
         }
       }}>{markdown}</Markdown>
-    </div>
+      </SplitterPanel>
+    </Splitter>
+
   )
 }
