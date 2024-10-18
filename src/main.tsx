@@ -12,6 +12,7 @@ import Keebs from './routes/Keebs/Keebs.tsx';
 import Article from './routes/Article/Article.tsx';
 import MarkdownCreate from './routes/MarkdownCreate/MarkdownCreate.tsx';
 import './index.css';
+import Resume from './routes/AboutMe/Resume.tsx';
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/me",
     element: <AboutMe />
+  },
+  {
+    path: "/me/resume",
+    element: <Resume />,
   },
   {
     path: "/models",
