@@ -1,3 +1,12 @@
 .wf-resume {
   width: 768px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.wf-resume #Skills ul {
+  list-style-type: none;
+}
+
+.wf-resume h5 {
+  font-size: 0.9em;
 }
