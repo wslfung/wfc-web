@@ -45,13 +45,6 @@ export default function TopMenu({ current }: TopMenuProps) {
         navigate("/keebs")
       }
     },
-    {
-      label: "About me",
-      icon: "pi pi-user",
-      command: () => {
-        navigate("/me")
-      }
-    }
   ]
 
   if (current) {
